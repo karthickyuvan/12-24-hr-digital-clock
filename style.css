@@ -1,0 +1,209 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins,sans-serif;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#2e2e44 ;
+    min-height: 100vh;
+}
+
+.digital-clock
+{
+    color: #fff;
+    background: #2d2f41;
+    box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+    padding: 20px 45px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 425px;
+}
+.time
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hour,.minutes,.seconds{
+    font-weight: 700;
+    padding: 0 10px;
+    line-height: 125px;
+ 
+}
+.hour,.minutes,.seconds
+{
+    font-size: 4rem;
+}
+
+.dots
+{
+    color: #929292;
+    font-size: 3rem;
+}
+.hour{
+background: -webkit-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%); ;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+}
+.minutes{
+    
+    background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.seconds{
+
+background: -webkit-linear-gradient(90deg, hsla(340, 80%, 69%, 1) 0%, hsla(15, 93%, 71%, 1) 100%);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+}
+.right-side
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -100px;
+    margin-right: 20px;
+}
+.period
+{
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 50px;
+    background: -webkit-linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.calendar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.date,.month,.year,.day
+{
+    padding: 0px 4px;    
+    background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.dot-menu-button
+{
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.dot-menu{
+    z-index: 1;
+    list-style: none;
+    background: #353e54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    transition: 0.3s  ease;
+    visibility: hidden;
+    opacity: 0;
+}
+.dot-menu.active{
+    visibility: visible;
+    opacity: 1 ;
+}
+
+.menu-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock-format-text
+{
+    color: #efefef;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+.format-switch-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 15px;
+    background: #485470;
+    border-radius: 75px;
+    box-shadow: inset 2px 2px 4px rgba(255,255,255,0.1),
+    inset -2px -2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.format-switch-btn::before
+{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background:#ff5e9a;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px #ff5e9a;
+    transform: translateX(-10px);
+    transition-property: background,transform;
+}
+.format-switch-btn.active:before
+{
+    background: #0bff8d;
+    box-shadow: 0 5px 25px #0bff8d;
+    transform: translateX(10px);
+}
+
+.digital-clock::before
+{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg,#24ff6d,#2f93f1,#ff5e9a);
+    background-size: 200% 200%;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    z-index: -1;
+    filter: blur(40px);
+    animation: glowing 10s ease infinite;
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
